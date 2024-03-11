@@ -1,10 +1,9 @@
+import { Form } from '@/features/form'
 import { Button } from '@/shared/button'
 import { services, topServices } from '@/shared/constants/services'
 import { Container } from '@/shared/container'
 import { Icon } from '@/shared/icon'
 import { Section } from '@/shared/section'
-import React from 'react'
-
 
 const App = () => {
     return (
@@ -15,12 +14,13 @@ const App = () => {
                         <h2 className='font-bold text-2xl'>LOGO</h2>
                         <h4>@creator-it-bot</h4>
                     </nav>
-                    <div className='mt-24 flex items-center justify-center'>
+                    <div className='mt-24 flex flex-col'>
                         <div>
-                            <h2 className='text-white text-6xl font-bold'>Creator IT</h2>
-                            <p className='text-white/50 text-lg mt-8'>Выполняем задачи на IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
-                            <Button className=' mt-12'>Связаться с нами</Button>
+                            <h2 className='text-white text-6xl text-center font-bold'>Creator IT</h2>
+                            <p className='text-white/50 text-lg text-center mt-8'>Выполняем задачи на IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
+                            <Button className='mx-auto mt-12'>Связаться с нами</Button>
                         </div>
+                        <Form />
                     </div>
                 </Container>
             </header>
