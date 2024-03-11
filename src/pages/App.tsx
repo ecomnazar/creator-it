@@ -15,12 +15,12 @@ const App = () => {
                         <h4>@creator-it-bot</h4>
                     </nav>
                     <div className='mt-24 flex flex-col'>
+                        <Form />
                         <div>
                             <h2 className='text-white text-6xl text-center font-bold'>Creator IT</h2>
                             <p className='text-white/50 text-lg text-center mt-8'>Выполняем задачи на IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
                             <Button className='mx-auto mt-12'>Связаться с нами</Button>
                         </div>
-                        <Form />
                     </div>
                 </Container>
             </header>
