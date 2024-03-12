@@ -4,22 +4,27 @@ import { services, topServices } from '@/shared/constants/services'
 import { Container } from '@/shared/container'
 import { Icon } from '@/shared/icon'
 import { Section } from '@/shared/section'
+import { FaTelegramPlane } from "react-icons/fa";
 
 const App = () => {
+    const SUPPORT_LINK = import.meta.env.VITE_TELEGRAM_SUPPORT_LINK
     return (
         <>
             <header className='py-8'>
                 <Container>
                     <nav className='flex items-center justify-between'>
                         <h2 className='font-bold text-2xl'>LOGO</h2>
-                        <h4>@creator-it-bot</h4>
+                        <a href={SUPPORT_LINK} target='_blank' className='flex items-center gap-x-2'>
+                            <FaTelegramPlane size={21} />
+                            <h4 className='-translate-y-[1px]'>@creator-it-bot</h4>
+                        </a>
                     </nav>
                     <div className='mt-24 flex flex-col'>
                         <Form />
                         <div>
                             <h2 className='text-white text-6xl text-center font-bold'>Creator IT</h2>
                             <p className='text-white/50 text-lg text-center mt-8'>Выполняем задачи на IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
-                            <Button className='mx-auto mt-12'>Связаться с нами</Button>
+                            <Button link={SUPPORT_LINK} className='mx-auto mt-12'>Связаться с нами</Button>
                         </div>
                     </div>
                 </Container>
@@ -35,9 +40,9 @@ const App = () => {
                                     return <li key={index} className='bg-[#F2F5F8] text-dark/50 px-6 py-3 cursor-default font-medium rounded-xl'>{item}</li>
                                 })}
                             </ul>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-14'>
+                            <div className='grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-14'>
                                 {services.map((service, index) => {
-                                    return <div key={index} className='p-8 border border-[#F2F5F8]'>
+                                    return <div key={index} className='p-8 border border-[#F2F5F8] rounded-xl'>
                                         <div className='bg-primary/20 w-10 h-10 rounded-lg'></div>
                                         <h3 className='text-dark font-semibold text-lg mt-4'>{service.title}</h3>
                                         <ul className='text-dark/50 text-[15px] space-y-2 mt-4'>
@@ -55,7 +60,7 @@ const App = () => {
                             <div className='mt-6'>
                                 <h3 className='text-dark font-semibold text-2xl'>Не нашли что искали?</h3>
                                 <h4 className='text-dark/50 text-lg font-medium mt-3'>Для нас нет нерешаемых задач. Наша команда всегда готова к новым вызовам</h4>
-                                <Button className='mt-6'>Связаться с нами</Button>
+                                <Button link={SUPPORT_LINK} className='mt-6'>Связаться с нами</Button>
                             </div>
                         </div>
                     </Section>
@@ -66,7 +71,7 @@ const App = () => {
                     <Section className='pb-0'>
                         <h4 className='text-dark font-semibold text-3xl text-center'>Связаться с нами</h4>
                         <p className='text-dark/50 text-center text-lg font-medium mt-6'>Обсудим все детали. Отвечаем быстро</p>
-                        <Button className='flex items-center gap-x-3 mx-auto mt-6'>
+                        <Button link={SUPPORT_LINK} className='flex items-center gap-x-3 mx-auto mt-6'>
                             <span>Перейти в Telegram</span>
                             <Icon type='link' />
                         </Button>
