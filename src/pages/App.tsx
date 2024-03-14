@@ -12,18 +12,19 @@ const App = () => {
         <>
             <header className='py-8'>
                 <Container>
-                    <nav className='flex items-center justify-between'>
-                        <h2 className='font-bold text-2xl'>LOGO</h2>
-                        <a href={SUPPORT_LINK} target='_blank' className='flex items-center gap-x-2'>
+                    <nav className='flex items-center justify-center'>
+                        {/* <h2 className='font-bold text-2xl'></h2> */}
+                        <img className='w-[700px]' src='/icons/logo.svg' />
+                        <a href={SUPPORT_LINK} target='_blank' className='absolute top-[5%] md:top-[10%] right-[10%] border-2 p-2 rounded-lg border-white flex items-center'>
                             <FaTelegramPlane size={21} />
-                            <h4 className='-translate-y-[1px]'>@creator-it-bot</h4>
+                            {/* <h4 className='-translate-y-[1px]'>@creator-it-bot</h4> */}
                         </a>
                     </nav>
-                    <div className='mt-24 flex flex-col'>
+                    <div className='flex flex-col'>
                         <Form />
                         <div>
                             <h2 className='text-white text-6xl text-center font-bold'>Creator IT</h2>
-                            <p className='text-white/50 text-lg text-center mt-8'>Выполняем задачи на IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
+                            <p className='text-white/50 text-lg text-center mt-8'>Выполняем задачи из IT-индустрии любой сложности. <br /> Индивидуальный подход к каждому</p>
                             <Button link={SUPPORT_LINK} className='mx-auto mt-12'>Связаться с нами</Button>
                         </div>
                     </div>
@@ -43,7 +44,7 @@ const App = () => {
                             <div className='grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-14'>
                                 {services.map((service, index) => {
                                     return <div key={index} className='p-8 border border-[#F2F5F8] rounded-xl'>
-                                        <div className='bg-primary/20 w-10 h-10 rounded-lg'></div>
+                                        <div className='bg-primary/20 w-10 h-10 rounded-lg flex items-center justify-center text-primary text-[21px]'>{service.icon}</div>
                                         <h3 className='text-dark font-semibold text-lg mt-4'>{service.title}</h3>
                                         <ul className='text-dark/50 text-[15px] space-y-2 mt-4'>
                                             {service.child.map((item, idx) => {
